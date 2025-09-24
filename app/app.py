@@ -86,23 +86,23 @@ app = Flask(__name__)
 
 @ app.route('/')
 def home():
-    title = 'leaf - Home'
+    title = 'Agri-vision: Home'
     return render_template('index.html', title=title)
 
-@ app.route('/about')
-def about():
-    title = 'leaf - about'
-    return render_template('about.html', title=title)
+# @ app.route('/about')
+# def about():
+#     title = 'leaf - about'
+#     return render_template('about.html', title=title)
 
-@ app.route('/contact')
-def contact():
-    title = 'leaf - contact'
-    return render_template('contact.html', title=title)
+# @ app.route('/contact')
+# def contact():
+#     title = 'leaf - contact'
+#     return render_template('contact.html', title=title)
 
 
 @app.route('/leaf-predict', methods=['GET', 'POST'])
 def disease_prediction():
-    title = 'leaf - Detection'
+    title = 'Agri-vision: Detection'
 
     if request.method == 'POST':
         if 'file' not in request.files:
@@ -122,11 +122,9 @@ def disease_prediction():
             pass
     return render_template('leaf.html', title=title)
 
-
 @ app.route('/fertilizer')
 def fertilizer_recommendation():
     title = 'leaf - identified'
-
     return render_template('fertilizer.html', title=title)
 
 @ app.route('/crop-recommend')
@@ -135,6 +133,5 @@ def crop_recommend():
     return render_template('crop.html', title=title)
 
 
-# ===============================================================================================
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True)
