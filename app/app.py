@@ -10,8 +10,7 @@ from torchvision import transforms
 from PIL import Image
 from utils.model import ResNet9
 
-# Loading plant disease classification model
-
+# Loading plant classification model
 leaf_classes = ['Apple',
                    'Apple',
                    'Apple',
@@ -117,7 +116,7 @@ def disease_prediction():
           
             prediction = leaf_dic[prediction]
             print(type(prediction))
-            return render_template('leaf-result.html', prediction=prediction, title=title)
+            return render_template('leaf-result.html',prediction=prediction, title=title)
         except:
             pass
     return render_template('leaf.html', title=title)
